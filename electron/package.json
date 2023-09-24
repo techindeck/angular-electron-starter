@@ -1,0 +1,30 @@
+{
+  "name": "electron-builder-angular",
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --win portable"
+  },
+  "private": true,
+  "description": "Electron and Angular Builder for desktop application",
+  "author": {
+    "name": "Amit Das",
+    "email": "amit@techindeck.com"
+  },
+  "devDependencies": {
+    "electron": "^25.2.0",
+    "electron-builder": "^24.4.0"
+  },
+  "build": {
+    "appId": "org.techindeck.angular-electron",
+    "productName": "AngularElectron",
+    "icon": "icon.ico",
+    "files": [
+      "web/**/*",
+      "*.js"
+    ]
+  }
+}
