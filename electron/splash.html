@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head title="Splash Screen | OpEzee Launcher">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splash Screen</title>
+    <!-- Add styles for your splash screen here -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* Example styles */
+      body {
+        background-color: #3f51b5;
+        color: white;
+        text-align: center;
+        font-size: 24px;
+        padding: 0;
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .image {
+        width: 150px;
+        height: auto;
+        margin-bottom: 32px;
+        text-align: center;
+        text-align: -webkit-center;
+      }
+
+      .heading h1 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .subheading p {
+        font-size: 16px;
+        margin-bottom: 32px;
+        color: #bfbfbf;
+      }
+
+      .spinner {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: radial-gradient(farthest-side, #fefefe 94%, #0000) top/9px
+            9px no-repeat,
+          conic-gradient(#0000 30%, #fefefe);
+        -webkit-mask: radial-gradient(
+          farthest-side,
+          #0000 calc(100% - 9px),
+          #000 0
+        );
+        animation: spinner-c7wet2 1s infinite linear;
+      }
+
+      @keyframes spinner-c7wet2 {
+        100% {
+          transform: rotate(1turn);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="image">
+        <div class="spinner"></div>
+      </div>
+      <div class="heading"><h1>OpEzee Launcher</h1></div>
+      <div class="subheading">
+        <p>
+          Please wait. <br />
+          We are setting up the application. This may take a few seconds
+        </p>
+      </div>
+
+      <!-- You can add an app logo, progress bar, or any other elements -->
+    </div>
+  </body>
+</html>
