@@ -1,7 +1,7 @@
 // main.js
 
 // Modules to control application life and create native browser window
-const { app, screen, BrowserWindow } = require("electron");
+const { app, screen, BrowserWindow, ipcMain } = require("electron");
 const electronServe = require("electron-serve");
 const unhandled = require("electron-unhandled");
 const electronIsDev = require("electron-is-dev");
@@ -55,8 +55,8 @@ const createWindow = () => {
     height: height,
     webPreferences: {
       preload: path.join(__dirname, "./preload.js"),
-      webSecurity: true,
-      nodeIntegration: true,
+      webSecurity: false,
+      nodeIntegration: false,
       contextIsolation: true,
     },
   });
@@ -66,11 +66,11 @@ const createWindow = () => {
 
   mainWindow.setMenuBarVisibility(false);
 
-  mainWindow.webContents.on("will-navigate", (event, _newURL) => {
-    if (!this.MainWindow.webContents.getURL().includes(this.customScheme)) {
-      event.preventDefault();
-    }
-  });
+  // mainWindow.webContents.on("will-navigate", (event, _newURL) => {
+  //   if (!mainWindow.webContents.getURL().includes(this.customScheme)) {
+  //     event.preventDefault();
+  //   }
+  // });
 
   loadURL(mainWindow);
 
@@ -108,6 +108,11 @@ app.whenReady().then(() => {
   splashWindow.on("closed", () => {
     splashWindow = null;
   });
+
+  // Register a global shortcut that does nothing
+  // globalShortcut.register("CommandOrControl+Shift+I", () => {
+  //   // Do nothing
+  // });
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common
@@ -124,3 +129,9 @@ app.on("before-quit", () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+// write a that will listen for a event and quit the app
+// when that event is triggered
+ipcMain.on("quit-app", () => {
+  app.quit();
+});
