@@ -1,5 +1,5 @@
 {
-  "name": "electron-builder-angular",
+  "name": "opezee-launcher",
   "version": "1.0.0",
   "main": "app/main.js",
   "license": "MIT",
@@ -9,10 +9,10 @@
     "dist": "electron-builder --win portable -c ./builder.config.json"
   },
   "private": true,
-  "description": "Electron and Angular Builder for desktop application",
+  "description": "opezee launcher client application",
   "author": {
-    "name": "Amit Das",
-    "email": "amit@techindeck.com"
+    "name": "OpEzee Private Limited",
+    "email": "amit@opezee.com"
   },
   "devDependencies": {
     "electron": "^25.2.0",

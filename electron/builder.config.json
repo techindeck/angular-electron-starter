@@ -1,6 +1,6 @@
 {
-  "appId": "com.techindeck.launcher",
-  "productName": "AngularElectron",
+  "appId": "com.opezee.launcher",
+  "productName": "OpEzeeLauncherClient",
   "files": ["web/**/*", "app/**/*", "splash.html"],
   "copyright": "Copyright © 2022 ${author}",
   "removePackageScripts": true,
